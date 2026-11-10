@@ -12399,6 +12399,45 @@ SG.init();
   .vz-price .later{display:block;font-size:11.5px;color:var(--muted);margin-top:1px;}
   .vz-sel{border:1.5px solid var(--blue);background:#fff;color:var(--blue);font-weight:700;font-size:13px;letter-spacing:.03em;border-radius:10px;padding:10px 22px;cursor:pointer;font-family:inherit;}
   .vz-sel:hover{background:var(--blue-tint);}
+  /* single consolidated highlight */
+  .vz-benes.one{grid-template-columns:1fr;}
+  /* documents required / FAQs quick links */
+  .vz-links{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .vz-dlink{display:inline-flex;align-items:center;gap:7px;background:none;border:none;cursor:pointer;font-family:inherit;color:var(--blue);font-weight:700;font-size:13px;padding:0;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+  .vz-dlink:hover{color:var(--blue-deep);}
+  .vz-dlink svg{width:16px;height:16px;flex:0 0 auto;}
+  .vz-sep{width:1px;height:16px;background:var(--line);}
+  /* price + info icon + breakup popover */
+  .vz-price-wrap{position:relative;margin-left:auto;}
+  .vz-info{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;border:none;background:none;color:var(--blue);cursor:pointer;padding:0;vertical-align:-3px;}
+  .vz-info svg{width:17px;height:17px;}
+  .vz-info:hover{color:var(--blue-deep);}
+  .vz-pop{position:absolute;right:-6px;bottom:calc(100% + 13px);width:272px;background:var(--surface);border:1px solid var(--line);border-radius:13px;box-shadow:0 18px 44px -14px rgba(0,0,0,.4);padding:14px 15px 0;z-index:30;text-align:left;animation:gmp .14s ease;}
+  .vz-pop[hidden]{display:none;}
+  .vzb-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px;}
+  .vzb-h .ttl{font-family:"Space Grotesk",system-ui,sans-serif;font-weight:700;font-size:14.5px;color:var(--ink);}
+  .vzb-h .ttl i{font-style:normal;font-weight:600;font-size:12px;color:var(--muted);margin-left:4px;}
+  .vzb-x{width:24px;height:24px;border-radius:6px;border:none;background:none;color:var(--muted);cursor:pointer;display:grid;place-items:center;}
+  .vzb-x:hover{color:var(--ink);} .vzb-x svg{width:14px;height:14px;}
+  .vzb-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:7px 0;border-bottom:1px solid var(--line-soft);font-size:13px;color:var(--ink-soft);}
+  .vzb-row span:last-child{color:var(--ink);font-weight:600;white-space:nowrap;}
+  .vzb-total{display:flex;justify-content:space-between;align-items:center;margin:6px -15px 0;padding:12px 15px;background:var(--blue-tint);border-top:1px solid var(--blue-line);border-radius:0 0 13px 13px;}
+  .vzb-total .tl{font-weight:700;color:var(--blue);font-size:13.5px;}
+  .vzb-total .tv{font-weight:800;color:var(--blue);font-size:15px;}
+  .vzb-arrow{position:absolute;right:16px;top:100%;width:16px;height:16px;background:var(--blue-tint);border-right:1px solid var(--blue-line);border-bottom:1px solid var(--blue-line);transform:translateY(-8px) rotate(45deg);}
+  @media(max-width:620px){.vz-pop{width:248px;right:auto;left:0;} .vzb-arrow{right:auto;left:18px;}}
+  /* documents / FAQ modal content */
+  .vdoc{display:flex;align-items:flex-start;gap:11px;padding:11px 0;border-bottom:1px solid var(--line-soft);}
+  .vdoc:last-child{border-bottom:none;}
+  .vdoc .vi{width:22px;height:22px;border-radius:50%;background:var(--green-bg);color:var(--green-d);display:grid;place-items:center;flex:0 0 auto;margin-top:1px;}
+  .vdoc .vi svg{width:13px;height:13px;}
+  .vdoc .vt{font-weight:700;font-size:14px;color:var(--ink);}
+  .vdoc .vd{font-size:12.5px;color:var(--ink-soft);margin-top:2px;line-height:1.5;}
+  .vfaq{padding:12px 0;border-bottom:1px solid var(--line-soft);}
+  .vfaq:last-child{border-bottom:none;}
+  .vfaq .q{display:flex;align-items:center;gap:9px;font-weight:700;font-size:14px;color:var(--ink);}
+  .vfaq .q svg{width:16px;height:16px;color:var(--blue);flex:0 0 auto;}
+  .vfaq .a{font-size:12.5px;color:var(--ink-soft);margin:5px 0 0 25px;line-height:1.55;}
   .vz-more{display:block;margin:2px auto 0;background:none;border:none;color:var(--blue);font-weight:700;font-size:13.5px;cursor:pointer;font-family:inherit;padding:8px;}
   .vz-foot{border-top:1px dashed var(--line);margin-top:12px;padding-top:12px;font-size:12px;color:var(--muted);}
   .vz-foot a{color:var(--blue);}
@@ -12617,7 +12656,7 @@ SG.init();
 
     <!-- VISA ADD-ON -->
     <section class="card addon collapsed" id="visaCard">
-      <div class="card-h"><span class="addon-chip" style="background:var(--purple-bg);color:var(--purple)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg></span><div><h2>Visa for your trip</h2><span class="sub">United States &middot; fully handled for your client</span></div><div class="h-right"><span class="addon-sum off" id="visaSum">Optional</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></div></div>
+      <div class="card-h"><span class="addon-chip" style="background:var(--purple-bg);color:var(--purple)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg></span><div><h2>Visa for your trip</h2><span class="sub">United States &middot; Fully handled visa assistance</span></div><div class="h-right"><span class="addon-sum off" id="visaSum">Optional</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></div></div>
       <div class="card-b"><div id="visaMod"></div></div>
     </section>
   </div>
@@ -13288,6 +13327,20 @@ const GM=`
     <button class="gm-x" data-gx><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
   <div class="gm-b" id="vhBody"></div>
   <div class="gm-f"><span class="n">Check the embassy site before travel — rules change often</span><button class="b" data-gx>Got it</button></div>
+</div></div>
+<div class="gm" id="gmVisaDocs"><div class="gmd">
+  <div class="gm-h"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 13h6M9 17h3"/></svg></span>
+    <div><h3>Documents required</h3><span class="s">United States &middot; B1/B2 visa</span></div>
+    <button class="gm-x" data-gx><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+  <div class="gm-b" id="vdocBody"></div>
+  <div class="gm-f"><span class="n">The final checklist is confirmed after you select a plan</span><button class="b" data-gx>Got it</button></div>
+</div></div>
+<div class="gm" id="gmVisaFaq"><div class="gmd">
+  <div class="gm-h"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 2-2.5 2-2.5 4M12 17h.01"/></svg></span>
+    <div><h3>Visa FAQs</h3><span class="s">United States &middot; fully handled assistance</span></div>
+    <button class="gm-x" data-gx><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+  <div class="gm-b" id="vfaqBody"></div>
+  <div class="gm-f"><span class="n">AERTICKET is a facilitator &middot; approval rests with the embassy</span><button class="b" data-gx>Got it</button></div>
 </div></div>`;
 document.body.insertAdjacentHTML("beforeend",GM);
 const sv2=(p,w)=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w||2}" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
@@ -13324,6 +13377,29 @@ const VH=[
 ];
 $("#vhBody").innerHTML=VH.map(([b,t,d,lbl,cls,ico])=>`<div class="vrow ${cls}"><span class="vi">${sv2(ico)}</span><div><div class="vt">${t}</div><div class="vd">${d}</div></div><span class="vb ${b}">${lbl}</span></div>`).join("")+
   `<div class="nt i" style="margin-top:12px">${sv2('<circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/>')}Entry rules are set by the destination country and can change without notice. AERTICKET provides this as guidance only.</div>`;
+
+/* ---- visa: documents required ---- */
+const VDOCS=[
+  ["Valid passport","Signed, with at least 6 months validity beyond travel and 2 blank pages."],
+  ["Passport-size photograph","Recent 2\u00d72 inch (51\u00d751 mm) photo, white background, taken within 6 months."],
+  ["Confirmed travel itinerary","Flight booking \u2014 issued automatically with this booking."],
+  ["Proof of funds","Bank statements for the last 6 months showing sufficient balance."],
+  ["Employment / business proof","Employer letter & salary slips, or business registration & ITR."],
+  ["DS-160 confirmation","Prepared and filed for you as part of the service."],
+  ["Previous visas & travel history","Copies of earlier visas or stamps, if any."]
+];
+$("#vdocBody").innerHTML=VDOCS.map(([t,d])=>`<div class="vdoc"><span class="vi">${sv2('<path d="M20 6 9 17l-5-5"/>',3)}</span><div><div class="vt">${t}</div><div class="vd">${d}</div></div></div>`).join("")+
+  `<div class="nt i" style="margin-top:12px">${sv2('<circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/>')}Requirements can vary by profile and are confirmed by our visa team after you select a plan.</div>`;
+
+/* ---- visa: FAQs ---- */
+const VFAQ=[
+  ["How long does the whole process take?","Document review and DS-160 filing take about 5\u20137 working days. Interview appointment dates depend on the plan you choose and embassy availability."],
+  ["Is the visa fee refundable?","Embassy and visa fees are generally non-refundable once the application is submitted. Service fees are governed by our standard terms & conditions."],
+  ["Do you guarantee the visa will be approved?","No. AERTICKET acts as a facilitator and assists with the application. The final decision rests solely with the embassy or consulate."],
+  ["Can I apply for more than one traveller?","Yes. After you select a plan you can choose which travellers to apply for, and the fee is calculated per traveller."],
+  ["What happens after I book?","Upload the required documents from My Bookings. Our visa team then reviews them and schedules your appointment."]
+];
+$("#vfaqBody").innerHTML=VFAQ.map(([q,a])=>`<div class="vfaq"><div class="q">${sv2('<circle cx="12" cy="12" r="10"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 2-2.5 2-2.5 4M12 17h.01"/>')}${q}</div><div class="a">${a}</div></div>`).join("");
 
 /* ---- inline contact validation ---- */
 function markField(el,ok,msg){
@@ -13369,18 +13445,32 @@ $("#visaBtn").addEventListener("click",()=>openGM("gmVisa"));
 /* ===================== VISA ADD-ON ===================== */
 const VISA_DEST={country:"United States",city:"New York",docBy:"18 Oct '26"};
 const VISA_PLANS=[
-  {id:"b2-10y",rec:true,label:"B1/B2 Tourist & Business",stay:"180 days",entry:"MULTIPLE",validity:"10 years",slot:"Appointment in ~45 days",price:11800,earn:900},
-  {id:"b2-pri",label:"B1/B2 \u00b7 Priority appointment",stay:"180 days",entry:"MULTIPLE",validity:"10 years",slot:"Appointment in ~20 days",price:14972,earn:1200},
-  {id:"c1",label:"C-1 Transit",stay:"29 days",entry:"SINGLE",validity:"60 days",slot:"Appointment in ~30 days",price:8179,earn:600}
+  {id:"b2-10y",rec:true,label:"B1/B2 Tourist & Business",stay:"180 days",entry:"MULTIPLE",validity:"10 years",proc:"5\u20137 days",slot:"Appointment in ~45 days",price:11800,
+   breakup:[["Visa Fee (Embassy)",8160],["Express Fee",1000],["Service Fee",2000],["Taxes (GST 18%)",640]]},
+  {id:"b2-pri",label:"B1/B2 \u00b7 Priority appointment",stay:"180 days",entry:"MULTIPLE",validity:"10 years",proc:"3\u20135 days",slot:"Appointment in ~20 days",price:14972,
+   breakup:[["Visa Fee (Embassy)",8160],["Express Fee",4000],["Service Fee",2000],["Taxes (GST 18%)",812]]},
+  {id:"c1",label:"C-1 Transit",stay:"29 days",entry:"SINGLE",validity:"60 days",proc:"4\u20136 days",slot:"Appointment in ~30 days",price:8179,
+   breakup:[["Visa Fee (Embassy)",5500],["Service Fee",2000],["Taxes (GST 18%)",679]]}
 ];
 let visaStep="plans", visaPlan=null, visaPax=new Set(), visaExpand=false;
 function visaPlanById(id){ return VISA_PLANS.find(p=>p.id===id); }
 function visaCount(){ return visaStep==="added"?visaPax.size:0; }
-function visaTotals(){ const p=visaPlanById(visaPlan), c=visaCount(); return {fee:p?p.price*c:0, earn:p?p.earn*c:0, count:c}; }
+function visaTotals(){ const p=visaPlanById(visaPlan), c=visaCount(); return {fee:p?p.price*c:0, earn:0, count:c}; }
 function visaGender(t){ return ({Mr:"Male",Master:"Male",Ms:"Female",Mrs:"Female",Miss:"Female"})[t.title]||"\u2014"; }
 function fmtDob(d){ if(!d)return "\u2014"; const p=d.split("-"); return p.length===3?(p[2]+"-"+p[1]+"-"+p[0]):d; }
 const VCHK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>';
-function visaFacts(p){ return '<div class="vz-fact"><b>'+p.stay+'</b><span>Stay</span></div><div class="vz-fact"><b>'+p.entry+'</b><span>Entry</span></div><div class="vz-fact"><b>'+p.validity+'</b><span>Validity</span></div>'; }
+const VINFO='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>';
+const VXC='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>';
+const VDOCI='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 13h6M9 17h3"/></svg>';
+const VFAQI='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 2-2.5 2-2.5 4M12 17h.01"/></svg>';
+function visaFacts(p){ return '<div class="vz-fact"><b>'+p.stay+'</b><span>Stay</span></div><div class="vz-fact"><b>'+p.entry+'</b><span>Entry</span></div><div class="vz-fact"><b>'+p.validity+'</b><span>Validity</span></div>'+(p.proc?'<div class="vz-fact"><b>'+p.proc+'</b><span>Processing</span></div>':''); }
+function visaBreakup(p){
+  const rows=(p.breakup||[]).filter(r=>r[1]>0).map(r=>'<div class="vzb-row"><span>'+r[0]+'</span><span>'+rupee(r[1])+'</span></div>').join("");
+  return '<div class="vzb-h"><span class="ttl">Price breakup<i>(Per adult)</i></span><button class="vzb-x" type="button" data-vzpopx aria-label="Close breakup">'+VXC+'</button></div>'
+    +rows
+    +'<div class="vzb-total"><span class="tl">Total Amount</span><span class="tv">'+rupee(p.price)+'</span></div>'
+    +'<span class="vzb-arrow"></span>';
+}
 
 function renderVisa(){
   const host=document.getElementById("visaMod"); if(!host) return;
@@ -13393,13 +13483,19 @@ function renderVisa(){
     const cards=shown.map(p=>'<div class="vz-plan'+(p.rec?' rec':'')+'">'
       +'<div class="vz-plan-top">'+visaFacts(p)+'<div class="vz-topright">'+(p.rec?'<span class="vz-rec">RECOMMENDED</span>':'')+'<button class="vz-view" type="button">View details</button></div></div>'
       +'<div class="vz-plan-bot">'
-      +'<span class="vz-when"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Book now &middot; documents by '+VISA_DEST.docBy+'</span>'
-      +'<span class="vz-price"><span class="pp">Per adult</span> <b>'+rupee(p.price)+'</b> &middot; <span class="earn">you earn '+rupee(p.earn)+'</span><span class="later">\u20b90 now \u00b7 '+rupee(p.price)+' on credit</span></span>'
+      +'<div class="vz-links">'
+        +'<button class="vz-dlink" type="button" data-vzdocs>'+VDOCI+'Documents Required</button>'
+        +'<span class="vz-sep"></span>'
+        +'<button class="vz-dlink" type="button" data-vzfaq>'+VFAQI+'FAQs</button>'
+      +'</div>'
+      +'<div class="vz-price-wrap">'
+        +'<span class="vz-price"><span class="pp">Per adult</span> <b>'+rupee(p.price)+'</b><button class="vz-info" type="button" data-vzinfo="'+p.id+'" aria-label="View price breakup">'+VINFO+'</button></span>'
+        +'<div class="vz-pop" id="vzpop-'+p.id+'" hidden>'+visaBreakup(p)+'</div>'
+      +'</div>'
       +'<button class="vz-sel" data-vzsel="'+p.id+'">SELECT</button></div></div>').join("");
     const more=VISA_PLANS.length>1?'<button class="vz-more" data-vzmore>'+(visaExpand?"Show fewer plans \u25b2":("View "+(VISA_PLANS.length-1)+" more plans \u25bc"))+'</button>':"";
-    host.innerHTML='<div class="vz-benes">'
-      +'<div class="vz-bene"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.5 8 8 11 4.5-3 8-6 8-11V5Z"/><path d="m9 12 2 2 4-4"/></svg><b>100% refund on the visa fee if the appointment can\u2019t be secured</b></div>'
-      +'<div class="vz-bene"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 13l2 2 4-4"/></svg><b>We handle the DS-160, appointment booking &amp; document prep</b></div>'
+    host.innerHTML='<div class="vz-benes one">'
+      +'<div class="vz-bene"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 13l2 2 4-4"/></svg><b>Complete visa application &amp; documentation assistance.</b></div>'
       +'</div><div class="vz-plans-lbl">Plan details</div>'+cards+more
       +'<div class="vz-foot">AERTICKET acts as a facilitator &amp; does not guarantee the outcome of the visa. <a href="#" data-vztc>View T&amp;Cs</a></div>';
     host.querySelectorAll("[data-vzsel]").forEach(b=>b.addEventListener("click",()=>{
@@ -13409,6 +13505,18 @@ function renderVisa(){
     const mb=host.querySelector("[data-vzmore]"); if(mb) mb.addEventListener("click",()=>{visaExpand=!visaExpand;renderVisa();});
     const tc=host.querySelector("[data-vztc]"); if(tc) tc.addEventListener("click",e=>{e.preventDefault();toast("Visa service terms & conditions");});
     host.querySelectorAll(".vz-view").forEach(b=>b.addEventListener("click",()=>toast("Showing full plan details\u2026")));
+    host.querySelectorAll("[data-vzdocs]").forEach(b=>b.addEventListener("click",()=>openGM("gmVisaDocs")));
+    host.querySelectorAll("[data-vzfaq]").forEach(b=>b.addEventListener("click",()=>openGM("gmVisaFaq")));
+    host.querySelectorAll("[data-vzinfo]").forEach(b=>b.addEventListener("click",e=>{
+      e.stopPropagation();
+      const pop=document.getElementById("vzpop-"+b.dataset.vzinfo), wasOpen=pop&&!pop.hidden;
+      host.querySelectorAll(".vz-pop").forEach(x=>x.hidden=true);
+      if(pop) pop.hidden=wasOpen;
+    }));
+    host.querySelectorAll("[data-vzpopx]").forEach(b=>b.addEventListener("click",e=>{e.stopPropagation();const pop=b.closest(".vz-pop"); if(pop) pop.hidden=true;}));
+    if(!window.__vzPopBound){ window.__vzPopBound=true;
+      document.addEventListener("click",e=>{ if(!e.target.closest(".vz-price-wrap")) document.querySelectorAll(".vz-pop").forEach(x=>x.hidden=true); });
+    }
   }
   else if(visaStep==="travellers"){
     const p=visaPlanById(visaPlan);
@@ -13450,13 +13558,12 @@ renderTravellers = function(){ __renderTravellers_v.apply(this,arguments); if(ty
 function syncAddons(seatsFee, ins, visa){
   const pax=Math.max(1, travellers.length);
   const insPot = pax * INSURANCE.reduce((s,p)=>s+p.earn,0);
-  const visaPot = pax * Math.max.apply(null, VISA_PLANS.map(p=>p.earn));
   const pill=(id,t,c)=>{ const el=document.getElementById(id); if(!el) return; el.textContent=t; el.className="addon-sum "+c; };
   // Seats/baggage/meals carry no agent commission -> service CTA
   pill("seatsSum", seatsFee>0 ? rupee(seatsFee)+" added" : "Add seats & meals", seatsFee>0 ? "on" : "off");
-  // Insurance & visa earn the agent margin -> lead with the earning
+  // Insurance earns the agent margin -> lead with the earning
   pill("insSum",  ins.fee>0  ? "You earn "+rupee(ins.earn)   : "Earn up to "+rupee(insPot),  ins.fee>0  ? "on" : "opp");
-  pill("visaSum", visa.fee>0 ? "You earn "+rupee(visa.earn)  : "Earn up to "+rupee(visaPot), visa.fee>0 ? "on" : "opp");
+  pill("visaSum", visa.fee>0 ? rupee(visa.fee)+" added" : "Optional", visa.fee>0 ? "on" : "off");
   // Group-level margin highlight for the agency
   const earned=ins.earn+visa.earn;
   const ml=document.getElementById("addonMargin"), banner=document.getElementById("addonBanner"), cta=document.getElementById("addonCta");
@@ -13465,7 +13572,7 @@ function syncAddons(seatsFee, ins, visa){
     if(banner) banner.classList.add("earning");
     if(cta) cta.textContent="Margin captured";
   } else {
-    if(ml) ml.textContent="Up to "+rupee(insPot+visaPot)+" extra margin on this booking";
+    if(ml) ml.textContent="Up to "+rupee(insPot)+" extra margin on this booking";
     if(banner) banner.classList.remove("earning");
     if(cta) cta.textContent="Tap a product to attach";
   }
@@ -18253,6 +18360,7 @@ setInterval(function(){
   .rtype{display:flex;gap:13px;border:1.5px solid var(--line);border-radius:12px;padding:14px 15px;margin-bottom:10px;cursor:pointer;transition:all .13s;} .rtype:hover{border-color:var(--blue-line);} .rtype.on{border-color:var(--blue);background:var(--blue-tint);}
   .rtype .radio{width:20px;height:20px;border-radius:50%;border:2px solid var(--line);flex:0 0 auto;margin-top:2px;display:grid;place-items:center;} .rtype.on .radio{border-color:var(--blue);} .rtype.on .radio::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--blue);}
   .rtype .rt{font-family:"Space Grotesk";font-weight:600;font-size:14.5px;} .rtype .rd{font-size:12px;color:var(--muted);margin-top:1px;} .rtype .rtag{margin-left:auto;font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap;height:fit-content;} .rtag.pen{background:var(--amber-bg);color:var(--amber);} .rtag.free{background:var(--green-bg);color:var(--green-d);}
+  .rtype-grp{font-family:"Space Grotesk";font-weight:700;font-size:12.5px;letter-spacing:.02em;color:var(--amber);margin:18px 0 9px;} .rtype-grp:first-child{margin-top:2px;}
 
   .refund-tbl{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:6px;}
   .refund-tbl td{padding:7px 0;} .refund-tbl td:last-child{text-align:right;font-family:"JetBrains Mono";font-weight:600;}
@@ -18465,10 +18573,12 @@ const BK={pnr:"AKHHJF",bookingId:"FLT26-1407-0323",route:"DEL → JFK",via:"DOH"
     {id:2,name:"Ms Anita Verma",tkt:"157-2411893477",paid:50746,penalty:12500,fee:350,comm:1248}
   ]};
 const TYPES=[
-  {id:"vol",name:"Voluntary cancellation",desc:"Client-initiated cancellation before departure. DGCA rule: only the airline's own cancellation charge applies — taxes and fees are refunded in full.",mult:1,tag:"Penalty applies",tagcls:"pen"},
-  {id:"invol",name:"Involuntary — schedule change / flight cancelled",desc:"Airline changed or cancelled the flight. DGCA rule: full refund mandatory, no cancellation charge.",mult:0,tag:"Full refund",tagcls:"free"},
-  {id:"partial",name:"Partial — unused sector",desc:"Refund the unflown segment only. DGCA rule: taxes for the unflown sector are always refunded in full.",mult:0.5,tag:"Reduced penalty",tagcls:"pen"},
-  {id:"noshow",name:"No-show",desc:"Passenger did not board; higher penalty. Not covered by DGCA's refund mandate — governed by the fare's own rules.",mult:1.25,tag:"Higher penalty",tagcls:"pen"}
+  {id:"normal",grp:"Normal cancellations",name:"Travel plan cancelled",desc:"Change in travel plans. Airline cancellation charges apply as per the standard airline cancellation policy.",mult:1,tag:"Penalty applies",tagcls:"pen"},
+  {id:"airline-cancel",grp:"Full refund cancellations",name:"Flight cancelled by the airline",desc:"Airline cancelled the flight — eligible for a full refund as per airline policy.",mult:0,tag:"Full refund",tagcls:"free"},
+  {id:"schedule-change",grp:"Full refund cancellations",name:"Airline changed the flight timing",desc:"Schedule change by the airline (e.g. 10:00 AM → 6:00 PM) — eligible for a full refund as per airline policy.",mult:0,tag:"Full refund",tagcls:"free"},
+  {id:"dgca-24h",grp:"Full refund cancellations",name:"Full refund under DGCA policy",desc:"Applicable for Indian LCCs and Air India (domestic) when cancelled within 24 hours of booking and departure is beyond 8 days.",mult:0,tag:"Full refund",tagcls:"free"},
+  {id:"airline-done",grp:"Full refund cancellations",name:"Airline confirmed — full refund processed",desc:"Airline has confirmed and already processed the full refund to us.",mult:0,tag:"Full refund",tagcls:"free"},
+  {id:"void",grp:"Void booking",name:"Void ticket (same-day only)",desc:"Allowed until 11:30 PM on the day the ticket is issued. Nominal airline void charges apply.",mult:0.1,tag:"Nominal charge",tagcls:"pen"}
 ];
 const DESTS=[
   {id:"wallet",name:"Agency wallet",desc:"Instant credit once approved",icon:'<rect x="2" y="6" width="20" height="13" rx="2"/><path d="M16 12h.01M2 10h20"/>'},
@@ -18486,7 +18596,7 @@ const STLABEL={requested:"Requested",review:"Under review",hold:"Hold-Released",
 const STICON={requested:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',review:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',hold:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',ticket:'<path d="M20 6 9 17l-5-5"/>',refunded:'<path d="M20 6 9 17l-5-5"/>',rejected:'<path d="M15 9l-6 6M9 9l6 6"/><circle cx="12" cy="12" r="9"/>'};
 const stPill=s=>`<span class="pill ${s}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">${STICON[s]}</svg>${STLABEL[s]}</span>`;
 
-let step=1, selected=new Set([1,2]), rtype="vol", dest="wallet";
+let step=1, selected=new Set([1,2]), rtype="normal", dest="wallet";
 
 function goStep(n){
   step=n;
@@ -18512,7 +18622,11 @@ function renderTickets(){
 $("#s2next").addEventListener("click",()=>goStep(3));
 // step3
 function renderTypes(){
-  $("#typeList").innerHTML=TYPES.map(t=>`<div class="rtype${rtype===t.id?" on":""}" data-ty="${t.id}"><span class="radio"></span><div><div class="rt">${t.name}</div><div class="rd">${t.desc}</div></div><span class="rtag ${t.tagcls}">${t.tag}</span></div>`).join("");
+  let last="";
+  $("#typeList").innerHTML=TYPES.map(t=>{
+    const h=t.grp&&t.grp!==last?(last=t.grp,`<div class="rtype-grp">${t.grp}</div>`):"";
+    return h+`<div class="rtype${rtype===t.id?" on":""}" data-ty="${t.id}"><span class="radio"></span><div><div class="rt">${t.name}</div><div class="rd">${t.desc}</div></div><span class="rtag ${t.tagcls}">${t.tag}</span></div>`;
+  }).join("");
   $$("#typeList .rtype").forEach(el=>el.addEventListener("click",()=>{rtype=el.dataset.ty;renderTypes();}));
 }
 $("#s3next").addEventListener("click",()=>goStep(4));
